@@ -12,16 +12,16 @@
 #include <sys/wait.h>
 #include <pthread.h>
 
-#define LOG_TAG "zcgames:Daemon=="
+#define LOG_TAG "xxx:Daemon=="
 
 #define LOGD(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__))
 
 #define PROC_DIR          "/proc/"
-#define DAEMON_LOOP_FLAG  "/data/data/cn.zcgames.ghostclaw/daemonRunFlag"
-#define DAEMON_PROCESS    "/data/data/cn.zcgames.ghostclaw/daemon"
-#define TARGET_SERVICE_PROCESS "cn.zcgames.ghostclaw:MainLoop"
-#define TARGET_PROCESS    "cn.zcgames.ghostclaw"
-#define TARGET_SERVICE    "cn.zcgames.ghostclaw.service.InputManagerService"
+#define DAEMON_LOOP_FLAG  "/data/data/cn.xxx.xxx/daemonRunFlag"
+#define DAEMON_PROCESS    "/data/data/cn.xxx.xxx/daemon"
+#define TARGET_SERVICE_PROCESS "cn.xxx.xxx:MainLoop"
+#define TARGET_PROCESS    "cn.xxx.xxx"
+#define TARGET_SERVICE    "cn.xxx.xxx.xxxService"
 /**
  * 判断是否是数字
  */
@@ -131,7 +131,7 @@ void checkAndRestart(const char *serviceName){
         strcat(command, TARGET_SERVICE);
         strcat(command, "  2>&1");
         LOGD("command  %s", command);
-        //system("/system/xbin/su -c \"am startservice -n cn.zcgames.ghostclaw/cn.zcgames.ghostclaw.service.InputManagerService\"");
+        //system("/system/xbin/su -c \"am startservice -n cn.xxx.xxx/cn.xxx.xxx.xxxxService\"");
         execCommandWithPopen(command);
     }
 }
